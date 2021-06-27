@@ -1,14 +1,16 @@
+/*set up box sizing for all the different elements*/
 *, *::before, *::after {
     box-sizing: border-box;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
 }
-
+/*define colour of body*/
 :root {
     --hue-neutral: 200;
     --hue-wrong: 0;
     --hue-correct: 145;
 }
 
+/*styling body*/
 body {
     --hue: var(--hue-neutral);
     padding: 0;
@@ -21,6 +23,7 @@ body {
     background-color: hsl(var(--hue), 100%, 20%);
 }
 
+/*change classes from correct or incorrect*/
 body.correct {
     --hue: var(--hue-correct);
 }
@@ -29,6 +32,7 @@ body.wrong {
     --hue: var(--hue-wrong);
 }
 
+/*container that grabs all the content and gives it a card effect*/
 .container {
     width: 800px;
     max-width: 80%;
@@ -38,6 +42,7 @@ body.wrong {
     box-shadow: 0 0 10px 2 px;
 }
 
+/*styling answer grid*/
 .btn-grid {
     display: grid;
     grid-template-columns:(2, auto);
@@ -45,6 +50,7 @@ body.wrong {
     margin: 20px 0;
 }
 
+/*Start or styling buttons for the page*/
 .btn {
     --hue: var(--hue-neutral);
     border: 1px solid hsl(var(--hue),100%, 30%);
@@ -73,13 +79,16 @@ body.wrong {
     font-weight: bold;
     padding: 10px 20px;
 }
+/*End of styling buttons for the page*/
 
+/*Wrapping buttons for the page*/
 .controls {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+/*hiding questions for start of game*/
 .hide {
     display: none;
 }

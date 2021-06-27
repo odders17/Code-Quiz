@@ -1,3 +1,4 @@
+//All the variables listed for the quiz to function correctly
 var startButton = document.getElementById('start-btn')
 var nextButton = document.getElementById('next-btn')
 var questionContainerElement = document.getElementById
@@ -13,6 +14,7 @@ nextButton.addEventListener('click', () =>{
     setNextQuestion()
 })
 
+//function to start game
 function startGame() {
     console.log('Started')
     startButton.classList.add('hide')
@@ -22,12 +24,14 @@ function startGame() {
     setNextQuestion()
 }
 
+//function to set next question
 function setNextQuestion() {
     resetState()
     showQuestion(shuffledQuestion[currentQuestionIndex])
 
 }
 
+//function to show question
 function showQuestion(question) {
     questionElement.innerText = question.question
     question.answers.forEach(answer => {
@@ -42,6 +46,7 @@ function showQuestion(question) {
     })
 }
 
+//function that resets everything back to default state
 function resetState() {
     clearStatusClass(document.body)
     nextButton.classList.add('hide')
@@ -51,6 +56,7 @@ function resetState() {
     }
 }
 
+//function when answer selected
 function selectAnswer(e) {
     var selectedButton = e.target
     var correct = selectedButton.dataset.correct
@@ -66,6 +72,7 @@ function selectAnswer(e) {
     }  
 }
 
+//function which clears state and chooses correct class depending if right or wrong answer
 function setStatusClass(element,correct) {
     clearStatusClass(element)
     if (correct) {
@@ -75,11 +82,13 @@ function setStatusClass(element,correct) {
     }
 }
 
+//function to remove class instead of add them
 function clearStatusClass(element) {
     element.classList.remove('correct')
     element.classList.remove('wrong')
 }
 
+//an array with all the questions listed to be asked chosen in random order
 var question = [
     {
         question: 'Do you have to be good at math to be a developer?',
